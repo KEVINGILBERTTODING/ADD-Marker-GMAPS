@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnmMarker, btncLoc;
+    Button btnmMarker, btncLoc, btnmapSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnmMarker = findViewById(R.id.btn_mMarker);
         btncLoc = findViewById(R.id.btn_cLocation);
+        btnmapSpinner = findViewById(R.id.btn_mapSpinner);
 
         btnmMarker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LokasiSaya.class));
+            }
+        });
+
+        btnmapSpinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SpinnerLocation.class));
             }
         });
     }

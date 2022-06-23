@@ -33,6 +33,15 @@
             android:textAllCaps="false"
             android:layout_gravity="center_horizontal"/>
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_mapSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_mMarker"
+            android:text="Spinner Marker"
+            android:textAllCaps="false"
+            android:layout_gravity="center_horizontal"/>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 

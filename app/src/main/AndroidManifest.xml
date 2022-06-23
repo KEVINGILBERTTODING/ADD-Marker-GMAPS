@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.aplikasilbsku">
+    package="com.example.aplikasilbsku" >
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,9 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiLBSKU"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".LokasiSaya"
+            android:name=".MainActivity"
             android:exported="true">
 
             <intent-filter>
@@ -28,6 +28,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".LokasiSaya"
+            android:exported="true" >
+
         </activity>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -47,9 +52,7 @@
         <activity
             android:name=".MapsActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps">
-
-        </activity>
+            android:label="@string/title_activity_maps" />
     </application>
 
 </manifest>

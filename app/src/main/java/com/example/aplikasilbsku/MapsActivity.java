@@ -18,7 +18,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends AppCompatActivity implements LocationListener, OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements  OnMapReadyCallback {
 
     private GoogleMap mMap;
 
@@ -27,17 +27,20 @@ public class MapsActivity extends AppCompatActivity implements LocationListener,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
+        hideNavigationBar();
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
 
-
-
     }
 
-
-
+    private void hideNavigationBar() {
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+    }
 
 
     @Override
@@ -54,27 +57,6 @@ public class MapsActivity extends AppCompatActivity implements LocationListener,
 
     }
 
-    @Override
-    public void onLocationChanged(@NonNull Location location) {
-        LatLng posisiku = new LatLng(location.getLatitude(), location.getLongitude());
-        mMap.addMarker(new MarkerOptions()
-                .position(posisiku)
-                .title("Posisi Saya Sekarang"));
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
-                posisiku, 10f);
-        mMap.animateCamera(cameraUpdate);
-    }
 
-
-//    @Override
-//    public void onLocationChanged(@NonNull Location location) {
-//        LatLng posisiku = new LatLng(location.getLatitude(), location.getLongitude());
-//        mMap.addMarker(new MarkerOptions()
-//                .position(posisiku)
-//                .title("Posisi Saya Sekarang"));
-//        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
-//                posisiku, 10f);
-//        mMap.animateCamera(cameraUpdate);
-//    }
 }
 
